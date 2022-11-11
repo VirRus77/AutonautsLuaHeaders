@@ -16,7 +16,7 @@ end
 -- Version: 137.14
 ---@param UID integer the unique ID of the building object - Required
 ---@param FuelAmount number Fuel to add to building - Required
----@param SetToMax boolean if Fuel should be filled to max capacity - Defaults to false
+---@param SetToMax? boolean if Fuel should be filled to max capacity - Defaults to false
 ---@return boolean # True if successfully added to the Fuel 
 function ModBuilding.AddFuel ( UID, FuelAmount, SetToMax )
     return false
@@ -63,9 +63,9 @@ end
 -- Version: 136.25
 ---@param PosX integer The location to check (X) - Required
 ---@param PosY integer The location to check (Y) - Required
----@param AllowFlooring boolean Allow flooring in the check? - Defaults to false
----@param AllowWalls boolean Allow walls in the check? - Defaults to false
----@param AllowFootprintTiles boolean Allow the spawn/in/out/footprint tiles of the building in the check? - Defaults to false
+---@param AllowFlooring? boolean Allow flooring in the check? - Defaults to false
+---@param AllowWalls? boolean Allow walls in the check? - Defaults to false
+---@param AllowFootprintTiles? boolean Allow the spawn/in/out/footprint tiles of the building in the check? - Defaults to false
 ---@return integer # (integer) - The UID of the building sitting on coordinate provided (-1 if none) 
 function ModBuilding.GetBuildingCoveringTile ( PosX, PosY, AllowFlooring, AllowWalls, AllowFootprintTiles )
     return 0
@@ -97,7 +97,7 @@ end
 -- Can be used in functions: AfterLoad(), AfterLoad_CreatedWorld(), AfterLoad_LoadedWorld(), AfterSave(), OnUpdate() 
 -- Version: 137.32
 ---@param DesiredName string Name of the building to search for - Required
----@return table # integer) - An array of all the unique IDs of all the buildings with specified name 
+---@return integer[] # An array of all the unique IDs of all the buildings with specified name 
 function ModBuilding.GetBuildingUIDsByName ( DesiredName )
     return { }
 end
@@ -110,7 +110,7 @@ end
 ---@param StartY integer The location to start the search from (Y) - Required
 ---@param EndX integer The location to end the search at (X) - Required
 ---@param EndY integer The location to end the search at (Y) - Required
----@return integer # integer) - An array of all the unique IDs of all the buildings in the area specified 
+---@return integer[] # An array of all the unique IDs of all the buildings in the area specified 
 function ModBuilding.GetBuildingUIDsOfType ( NewTypeString, StartX, StartY, EndX, EndY )
     return 0
 end
@@ -171,7 +171,7 @@ end
 -- Can be used in functions: Creation(), BeforeLoad(), AfterLoad(), AfterLoad_CreatedWorld(), AfterLoad_LoadedWorld(), AfterSave(), OnUpdate() 
 -- Version: 137.14.9
 ---@param NewTypeString string
----@param Callback function
+---@param Callback fun(BuildingUID :integer, BuildingType :string, IsBlueprint :boolean, IsDragging :boolean)
 function ModBuilding.RegisterForBuildingTypeSpawnedCallback ( NewTypeString, Callback )
 end
 

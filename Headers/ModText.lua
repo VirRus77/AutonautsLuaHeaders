@@ -32,7 +32,7 @@ end
 -- Version: 137.14.11
 ---@param TextID string The identifier for text string, TextID for a mod object is the unique name
 ---@param Text string The new text string value
----@param ModText boolean
+---@param ModText? boolean
 function ModText.SetText ( TextID, Text, ModText )
 end
 

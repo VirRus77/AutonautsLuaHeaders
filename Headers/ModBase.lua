@@ -31,7 +31,7 @@ end
 -- Version: 134.31
 ---@param UniqueName string The unique and corresponding name of the Exposed variable - Required
 ---@param DefaultValue any The starting (default) value of your Exposed variable - Required
----@param Callback function The function to callback when the value is changed - Required
+---@param Callback fun(value: any, name: string) The function to callback when the value is changed - Required
 ---@param Min any The minimum allowed value of your Exposed variable - Required for Numbers
 ---@param Max any The maximum allowed value of your Exposed variable - Required for Numbers
 function ModBase.ExposeVariable ( UniqueName, DefaultValue, Callback, Min, Max )
@@ -59,7 +59,7 @@ end
 --- Get the current state of the game
 -- Can be used in functions: Creation(), Expose(), BeforeLoad(), AfterLoad(), AfterLoad_CreatedWorld(), AfterLoad_LoadedWorld(), AfterSave(), OnUpdate() 
 -- Version: 134.31
----@return string # State as a string (e.g. "Normal" or "Edit" or "MainMenu") 
+---@return string|"Normal"|"Edit"|"MainMenu" # State as a string (e.g. "Normal" or "Edit" or "MainMenu") 
 function ModBase.GetGameState ( )
     return ""
 end

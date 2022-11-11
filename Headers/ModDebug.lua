@@ -18,6 +18,6 @@ end
 -- Can be used in functions: Creation(), Expose(), BeforeLoad(), AfterLoad(), AfterLoad_CreatedWorld(), AfterLoad_LoadedWorld(), AfterSave(), OnUpdate() 
 -- Version: 134.21
 ---@param args any # any
-function ModDebug.Log ( args )
+function ModDebug.Log ( args, ... )
 end
 

@@ -88,8 +88,9 @@ end
 --- Get the properties of a given object providing the object's unique ID
 -- Can be used in functions: AfterLoad(), AfterLoad_CreatedWorld(), AfterLoad_LoadedWorld(), AfterSave(), OnUpdate() 
 -- Version: 136.22
+---@alias ObjectProperties { [1] :string, [2] :number, [3] :number, [4] :number, [5] :string } #
 ---@param UID integer the unique ID of the object - Required
----@return table # Properties [1]=Type, [2]=TileX, [3]=TileY, [4]=Rotation, [5]=Name - Table will be empty if failed 
+---@return ObjectProperties|nil # Properties [1]=Type, [2]=TileX, [3]=TileY, [4]=Rotation, [5]=Name - Table will be empty if failed 
 function ModObject.GetObjectProperties ( UID )
     return { }
 end
