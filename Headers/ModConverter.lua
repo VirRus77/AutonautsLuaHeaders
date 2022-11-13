@@ -41,7 +41,7 @@ end
 ---@param BR? integer[] Bottom Right ground coordinates of the converter (for area) e.g. (2,0) - Defaults to none
 ---@param Access? integer[] Access point (for the farmer player) ground coordinates of the converter e.g. (1,1) - Defaults to none
 ---@param Spawn? integer[] Spawn point (of the item) ground coordinates of the converter e.g. (2,1) - Defaults to none
----@param UsingCustomModel boolean True if using a custom model, false if using in game model/default model - Defaults to true
+---@param UsingCustomModel? boolean True if using a custom model, false if using in game model/default model - Defaults to true
 function ModConverter.CreateConverter ( UniqueName, RecipeStringArr, NewIngredientsStringArr, NewIngredientsAmountArr, ModelName, TL, BR, Access, Spawn, UsingCustomModel )
 end
 
@@ -49,7 +49,8 @@ end
 -- Can be used in functions: AfterLoad(), AfterLoad_CreatedWorld(), AfterLoad_LoadedWorld(), AfterSave(), OnUpdate() 
 -- Version: 136.27
 ---@param UID integer the unique ID of the converter - Required
----@return table # Properties: State(Idle,Converting,Creating,Cancelling), TileX, TileY, Rotation, Name, RequirementsMet, OutputX, OutputY, InputX, InputY, LastObjectAddedType, CurrentFuel, FuelCapacity
+---@alias ConverterProperties { [1] : "Idle"|"Converting"|"Creating"|"Cancelling", [2] :integer, [3] :integer, [4] :number, [5] :string, [6] :boolean, [7] :integer, [8] :integer, [9] :integer, [10] :integer, [11] :string|integer, [12] :integer, [13] :integer }
+---@return ConverterProperties # Properties: State(Idle,Converting,Creating,Cancelling), TileX, TileY, Rotation, Name, RequirementsMet, OutputX, OutputY, InputX, InputY, LastObjectAddedType, CurrentFuel, FuelCapacity
 --Returns an empty table if converter can't be found.
 function ModConverter.GetConverterProperties ( UID )
     return { }

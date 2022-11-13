@@ -38,7 +38,7 @@ end
 -- Version: 137.14
 ---@param UID integer the unique ID of the building object - Required
 ---@param WaterAmount number water to add to building - Required
----@param SetToMax boolean if water should be filled to max capacity - Defaults to false
+---@param SetToMax? boolean if water should be filled to max capacity - Defaults to false
 ---@return boolean # True if successfully added to the water 
 function ModBuilding.AddWater ( UID, WaterAmount, SetToMax )
     return false
@@ -59,6 +59,7 @@ function ModBuilding.CreateBuilding ( UniqueName, NewIngredientsStringArr, NewIn
 end
 
 --- Get the Unique ID of the building that covers the provided tile coordinates
+-- Excludes: floor, walls, and entrence, exits.
 -- Can be used in functions: AfterLoad(), AfterLoad_CreatedWorld(), AfterLoad_LoadedWorld(), AfterSave(), OnUpdate() 
 -- Version: 136.25
 ---@param PosX integer The location to check (X) - Required
@@ -66,7 +67,7 @@ end
 ---@param AllowFlooring? boolean Allow flooring in the check? - Defaults to false
 ---@param AllowWalls? boolean Allow walls in the check? - Defaults to false
 ---@param AllowFootprintTiles? boolean Allow the spawn/in/out/footprint tiles of the building in the check? - Defaults to false
----@return integer # (integer) - The UID of the building sitting on coordinate provided (-1 if none) 
+---@return integer # The UID of the building sitting on coordinate provided (-1 if none) 
 function ModBuilding.GetBuildingCoveringTile ( PosX, PosY, AllowFlooring, AllowWalls, AllowFootprintTiles )
     return 0
 end
@@ -155,7 +156,7 @@ end
 -- Can be used in functions: Creation(), BeforeLoad(), AfterLoad(), AfterLoad_CreatedWorld(), AfterLoad_LoadedWorld(), AfterSave(), OnUpdate() 
 -- Version: 137.14.9
 ---@param BuildingUID integer The unique ID of the building object - Required
----@param Callback function
+---@param Callback fun(buildingUID :integer, editType :"Rotate"|"Move"|"Rename"|"Destroy", newValue :any)
 function ModBuilding.RegisterForBuildingEditedCallback ( BuildingUID, Callback )
 end
 
@@ -163,7 +164,7 @@ end
 -- Can be used in functions: OnUpdate() 
 -- Version: 137.14.11
 ---@param BuildingUID integer The UID of the building
----@param Callback function
+---@param Callback fun(buildingUID :integer, newState :any)
 function ModBuilding.RegisterForBuildingStateChangedCallback ( BuildingUID, Callback )
 end
 
@@ -171,7 +172,8 @@ end
 -- Can be used in functions: Creation(), BeforeLoad(), AfterLoad(), AfterLoad_CreatedWorld(), AfterLoad_LoadedWorld(), AfterSave(), OnUpdate() 
 -- Version: 137.14.9
 ---@param NewTypeString string
----@param Callback fun(BuildingUID :integer, BuildingType :string, IsBlueprint :boolean, IsDragging :boolean)
+---@alias BuildingTypeSpawnedCallback fun(buildingUID :integer, buildingType :string, isBlueprint :boolean, isDragging :boolean)
+---@param Callback BuildingTypeSpawnedCallback
 function ModBuilding.RegisterForBuildingTypeSpawnedCallback ( NewTypeString, Callback )
 end
 
@@ -182,7 +184,7 @@ end
 ---@param StartY integer
 ---@param EndX integer
 ---@param EndY integer
----@param Callback function
+---@param Callback fun(buildingUID :integer, isBlueprint :boolean, isDragging :boolean)
 function ModBuilding.RegisterForNewBuildingInAreaCallback ( StartX, StartY, EndX, EndY, Callback )
 end
 
@@ -254,13 +256,13 @@ end
 -- Can be used in functions: Creation() 
 -- Version: 134.30
 ---@param UniqueName string The unique name of the custom item - Required
----@param Scale number Scale of the model - Defaults to 1
----@param RotX number Rotation (X) of the model - Defaults to 0
----@param RotY number Rotation (Y) of the model - Defaults to 0
----@param RotZ number Rotation (Z) of the model - Defaults to 0
----@param TransX number Translation (X) of the model - Defaults to 0
----@param TransY number Translation (Y) of the model - Defaults to 0
----@param TransZ number Translation (Z) of the model - Defaults to 0
+---@param Scale? number Scale of the model - Defaults to 1
+---@param RotX? number Rotation (X) of the model - Defaults to 0
+---@param RotY? number Rotation (Y) of the model - Defaults to 0
+---@param RotZ? number Rotation (Z) of the model - Defaults to 0
+---@param TransX? number Translation (X) of the model - Defaults to 0
+---@param TransY? number Translation (Y) of the model - Defaults to 0
+---@param TransZ? number Translation (Z) of the model - Defaults to 0
 function ModBuilding.UpdateModelParameters ( UniqueName, Scale, RotX, RotY, RotZ, TransX, TransY, TransZ )
 end
 

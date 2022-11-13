@@ -59,9 +59,10 @@ end
 --- Get the current state of the game
 -- Can be used in functions: Creation(), Expose(), BeforeLoad(), AfterLoad(), AfterLoad_CreatedWorld(), AfterLoad_LoadedWorld(), AfterSave(), OnUpdate() 
 -- Version: 134.31
----@return string|"Normal"|"Edit"|"MainMenu" # State as a string (e.g. "Normal" or "Edit" or "MainMenu") 
+---@alias GameState "Normal"|"SelectWorker"|"TeachWorker"|"Edit"|"Planning"|"BuildingSelect"|"Inventory"|"DragInventorySlot"|"CheatTools"|"CreativeTools"|"Paused"|"PlatformPaused"|"Save"|"Load"|"Confirm"|"Settings"|"About"|"SelectObject"|"FreeCam"|"PlayCameraSequence"|"BackupRestore"|"RenameSign"|"Loading"|"CreateWorld"|"Ceremony"|"NewGame"|"Terraform"|"EditArea"|"Error"|"OK"|"Badges"|"Industry"|"Evolution"|"Academy"|"Research"|"Autopedia"|"Drag"|"Stats"|"AnyKey"|"Arcade"|"MissionEditor"|"MissionList"|"ObjectSelect"|"SetTargetTile"|"SetSpacePort"|"Start"|"SettlementHierarchy"|"MainMenuCreate"|"MainMenu"|"LanguageSelect"|"ModsPanel"|"ModsUploadConfirm"|"ModsError"|"ModsOptions"|"ModsAnyKey"|"ModsPopup"|"ModsPopupConfirm"|"ModsPanelLocalOnly"|"SceneChange" #
+---@return GameState # State as a string (e.g. "Normal" or "Edit" or "MainMenu") 
 function ModBase.GetGameState ( )
-    return ""
+    return "Normal"
 end
 
 --- Get the version of the game
@@ -159,9 +160,9 @@ end
 ---@param Item string The item to spawn - Required
 ---@param NewX integer X Position in tile coordinates - Required
 ---@param NewY integer Y Position in tile coordinates - Required
----@param DoOnce boolean If this should only spawn once, or every load (do not use in a large loop) - Defaults to false
----@param Instant boolean If the building should be forced instantly built - Defaults to false
----@param ForceBP boolean If the building should be forced to blueprint stage - Defaults to false
+---@param DoOnce? boolean If this should only spawn once, or every load (do not use in a large loop) - Defaults to false
+---@param Instant? boolean If the building should be forced instantly built - Defaults to false
+---@param ForceBP? boolean If the building should be forced to blueprint stage - Defaults to false
 ---@return integer # The Unique ID of object spawned (returns -1 if failed) 
 function ModBase.SpawnItem ( Item, NewX, NewY, DoOnce, Instant, ForceBP )
     return 0
