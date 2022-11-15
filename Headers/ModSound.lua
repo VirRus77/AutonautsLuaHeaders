@@ -1,3 +1,9 @@
+--[[
+Copyright (C) Sotin NU aka VirRus77
+Author: Sotin NU aka VirRus77
+--]]
+
+
 ModSound = { }
 
 --- Allow the changing of the day/night cycle of music

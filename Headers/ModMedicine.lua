@@ -1,3 +1,9 @@
+--[[
+Copyright (C) Sotin NU aka VirRus77
+Author: Sotin NU aka VirRus77
+--]]
+
+
 ModMedicine = { }
 
 --- Create a custom Medicine item, one the player can use as a medicine

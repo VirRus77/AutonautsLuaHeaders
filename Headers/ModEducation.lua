@@ -1,3 +1,9 @@
+--[[
+Copyright (C) Sotin NU aka VirRus77
+Author: Sotin NU aka VirRus77
+--]]
+
+
 ModEducation = { }
 
 --- Create a custom Education item, one the player can use as an Education item

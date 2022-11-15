@@ -1,3 +1,9 @@
+--[[
+Copyright (C) Sotin NU aka VirRus77
+Author: Sotin NU aka VirRus77
+--]]
+
+
 ModPlayer = { }
 
 --- Drop all held objects in players hands

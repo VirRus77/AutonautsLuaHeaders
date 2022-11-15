@@ -1,3 +1,9 @@
+--[[
+Copyright (C) Sotin NU aka VirRus77
+Author: Sotin NU aka VirRus77
+--]]
+
+
 ModQuest = { }
 
 --- Is an item unlocked by Quest/Research? Works for objects and buildings.

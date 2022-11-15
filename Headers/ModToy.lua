@@ -1,3 +1,9 @@
+--[[
+Copyright (C) Sotin NU aka VirRus77
+Author: Sotin NU aka VirRus77
+--]]
+
+
 ModToy = { }
 
 --- Create a custom Toy item, one the player can use as a Toy

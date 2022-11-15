@@ -1,3 +1,9 @@
+--[[
+Copyright (C) Sotin NU aka VirRus77
+Author: Sotin NU aka VirRus77
+--]]
+
+
 ModHoldable = { }
 
 --- Create a custom holdable item, one the player can pickup and move about

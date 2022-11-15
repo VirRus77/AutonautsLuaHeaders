@@ -1,3 +1,9 @@
+--[[
+Copyright (C) Sotin NU aka VirRus77
+Author: Sotin NU aka VirRus77
+--]]
+
+
 ModTiles = { }
 
 --- Clear everything (all objects, excludes Bots/Player) in an area

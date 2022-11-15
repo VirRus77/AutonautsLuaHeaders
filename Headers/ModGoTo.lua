@@ -1,3 +1,9 @@
+--[[
+Copyright (C) Sotin NU aka VirRus77
+Author: Sotin NU aka VirRus77
+--]]
+
+
 ModGoTo = { }
 
 --- Create a custom goto item, one that can move about with pathfinding

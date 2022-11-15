@@ -1,3 +1,9 @@
+--[[
+Copyright (C) Sotin NU aka VirRus77
+Author: Sotin NU aka VirRus77
+--]]
+
+
 ModObject = { }
 
 --- Add materials to a cache for later use with SetNodeMaterial().

@@ -1,3 +1,9 @@
+--[[
+Copyright (C) Sotin NU aka VirRus77
+Author: Sotin NU aka VirRus77
+--]]
+
+
 ModTool = { }
 
 --- Create a custom tool item, one the player can pickup and use on defined objects

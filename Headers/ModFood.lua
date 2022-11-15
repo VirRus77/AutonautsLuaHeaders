@@ -1,3 +1,9 @@
+--[[
+Copyright (C) Sotin NU aka VirRus77
+Author: Sotin NU aka VirRus77
+--]]
+
+
 ModFood = { }
 
 --- Create a custom food item, one the player can pickup, move about and use as a food

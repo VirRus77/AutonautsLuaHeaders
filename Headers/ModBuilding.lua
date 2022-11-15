@@ -1,3 +1,9 @@
+--[[
+Copyright (C) Sotin NU aka VirRus77
+Author: Sotin NU aka VirRus77
+--]]
+
+
 ModBuilding = { }
 
 --- Add Energy to a Power Building (e.g. Windmill, GiantWaterWheel, StationaryEngine)
@@ -76,7 +82,9 @@ end
 -- . Can be used in functions: OnUpdate() 
 -- Version: 137.14.11
 ---@param UID integer The unique ID of the building object - Required
----@return any # Table of remaining requirements 
+---@alias BuildingRequirementItem { [1] :string, [2] :number, [3] :number, [4] :"Ingredient"|"Fuel"|"Water"|"Heart"|"Hay" }
+---@alias BuildingRequirements BuildingRequirementItem[]
+---@return BuildingRequirements # Table of remaining requirements 
 function ModBuilding.GetBuildingRequirements ( UID )
     return 0
 end
