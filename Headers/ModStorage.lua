@@ -6,6 +6,13 @@ Author: Sotin NU aka VirRus77
 
 ModStorage = { }
 
+---@class StorageInfo :{ integer, string|integer }
+---@field [1] string  # Object It Stores
+---@field [2] integer # Amount Stored
+---@field [3] integer # Capacity
+---@field [4] string  # Type Of Storage
+ModStorage.StorageInfo = { }
+
 --- Add an object to provided storage
 -- Adding a Bucket of liquid to liquid storage will add the bucket's contents but not destroy the bucket itself. 
 -- Version: 137.19
@@ -30,7 +37,6 @@ end
 -- Can be used in functions: AfterLoad(), AfterLoad_CreatedWorld(), AfterLoad_LoadedWorld(), AfterSave(), OnUpdate() 
 -- Version: 137.32
 ---@param UID integer The unique ID of the object - Required
----@alias StorageInfo {[1] :string, [2] :integer, [3] :integer, [4] :string} #
 ---@return StorageInfo # Properties [1]=Object It Stores, [2]=Amount Stored, [3]=Capacity, [4]=Type Of Storage 
 function ModStorage.GetStorageInfo ( UID )
     return { }

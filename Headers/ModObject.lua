@@ -173,7 +173,7 @@ end
 ---@param UID integer the unique ID of the object - Required
 ---@param NodeName string Regex pattern - Name of node within object (in OBJ file: o _______) - Required. (https://www.regular-expressions.info/quickstart.html)
 ---@param NewMatName string Name of new material (in MTL file: newmtl _______) - Required.
----@param OldMatName string Regex pattern - Name of old material (in OBJ file: usemtl _______) - Optional. If not supplied, then new material is assigned to the first material slot.
+---@param OldMatName? string Regex pattern - Name of old material (in OBJ file: usemtl _______) - Optional. If not supplied, then new material is assigned to the first material slot.
 ---@return boolean # Bool 
 function ModObject.SetNodeMaterial ( UID, NodeName, NewMatName, OldMatName )
     return false

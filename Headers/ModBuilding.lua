@@ -4,7 +4,16 @@ Author: Sotin NU aka VirRus77
 --]]
 
 
+---@alias RequirementType "Ingredient"|"Fuel"|"Water"|"Heart"|"Hay"
+
 ModBuilding = { }
+
+---@class BuildingRequirementItem
+---@field [1] string # Type
+---@field [2] number # Capacity
+---@field [3] number # Amount
+---@field [4] RequirementType # Type
+ModBuilding.BuildingRequirementItem = { }
 
 --- Add Energy to a Power Building (e.g. Windmill, GiantWaterWheel, StationaryEngine)
 -- Can be used in functions: AfterLoad(), AfterLoad_CreatedWorld(), AfterLoad_LoadedWorld(), AfterSave(), OnUpdate() 
@@ -82,11 +91,10 @@ end
 -- . Can be used in functions: OnUpdate() 
 -- Version: 137.14.11
 ---@param UID integer The unique ID of the building object - Required
----@alias BuildingRequirementItem { [1] :string, [2] :number, [3] :number, [4] :"Ingredient"|"Fuel"|"Water"|"Heart"|"Hay" }
 ---@alias BuildingRequirements BuildingRequirementItem[]
 ---@return BuildingRequirements # Table of remaining requirements 
 function ModBuilding.GetBuildingRequirements ( UID )
-    return 0
+    return { }
 end
 
 --- Get the unique IDs of buildings that require the specified ingredient in their recipe
@@ -121,7 +129,7 @@ end
 ---@param EndY integer The location to end the search at (Y) - Required
 ---@return integer[] # An array of all the unique IDs of all the buildings in the area specified 
 function ModBuilding.GetBuildingUIDsOfType ( NewTypeString, StartX, StartY, EndX, EndY )
-    return 0
+    return { }
 end
 
 --- Get the maximum Fuel capacity of a Building that allows it (e.g. TrainRefuellingStation, StationaryEngine)
