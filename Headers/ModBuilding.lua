@@ -105,7 +105,7 @@ end
 ---@param StartY integer The location to start the search from (Y) - Required
 ---@param EndX integer The location to end the search at (X) - Required
 ---@param EndY integer The location to end the search at (Y) - Required
----@return integer # integer) - An array of all the unique IDs of all the buildings in the area specified 
+---@return integer[] # An array of all the unique IDs of all the buildings in the area specified 
 function ModBuilding.GetBuildingsUIDsRequiringIngredientInArea ( IngredientString, StartX, StartY, EndX, EndY )
     return 0
 end

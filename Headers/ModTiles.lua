@@ -74,7 +74,7 @@ end
 -- Version: 134.19
 ---@param xPos integer The location to query (X) - Required
 ---@param yPos integer The location to query (Y) - Required
----@return table # String array containing all object types 
+---@return string[] # String array containing all object types 
 function ModTiles.GetObjectTypeOnTile ( xPos, yPos )
     return { }
 end
